@@ -1,0 +1,227 @@
+" Modified from Vim Bootstrap generated configuration file
+" Reference: https://vim-bootstrap.com/
+
+"*****************************************************************************
+"" Plug install packages
+"*****************************************************************************
+
+call plug#begin(expand('~/.vim/plugged'))
+
+Plug 'dracula/vim', { 'as': 'vim-dracula' }
+Plug 'cespare/vim-toml'
+Plug 'elixir-editors/vim-elixir'
+Plug 'vim-scripts/rfc-syntax', { 'as': 'vim-rfc' }
+"Plug 'habamax/vim-asciidoctor'
+
+call plug#end()
+
+filetype plugin indent on
+
+
+"*****************************************************************************
+"" General Settings
+"*****************************************************************************
+
+set nocompatible
+
+" No Tab
+set tabstop=4
+set softtabstop=0
+set shiftwidth=4
+set expandtab
+
+" Display tabs and trailing spaces
+set list listchars=tab:▹\ ,trail:▫
+
+" Searching
+set hlsearch
+set incsearch
+set noignorecase
+set nosmartcase
+
+" Allow switching between unsaved buffers
+set hidden
+
+" Disable Netrw history
+let g:netrw_dirhistmax=0
+
+" Fix backspace not working
+set backspace=indent,eol,start
+
+" Ctags locations
+set tags=tags,../tags,../../tags
+
+"*****************************************************************************
+"" Visual Settings
+"*****************************************************************************
+
+syntax on
+set ruler
+set number
+
+" Not enabling Vim mouse because selection with line numbers is sometime useful
+" for documentation. This also prevents mouse click to move the text cursor.
+set mouse=""
+
+if ($COLORTERM == 'truecolor' || $COLORTERM == '24bit')
+    " Enable 24-bit color
+    " Reference: https://gist.github.com/XVilka/8346728
+    set termguicolors
+else
+    " Fallback to 256-color palette
+    set t_Co=256
+    " Disable Background Color Erase to avoid background bleeding
+    " on 256-color palette Tmux and GNU Screen.
+    " Reference: https://sunaku.github.io/vim-256color-bce.html
+    set t_ut=
+endif
+
+"colorscheme codedark
+colorscheme dracula
+
+set textwidth=79
+set colorcolumn=+1,+21
+
+" `formatoptions` (default was "tcq"). See `fo-table` for option description.
+"  -t   *DISABLE* Auto-wrap text using textwidth
+"  -c   Auto-wrap comments using textwidth, inserting the current comment
+"       leader automatically.
+"  -q   Allow formatting of comments with "gq".
+"  -1   Don't break a line after a one-letter word.  It's broken before it
+"       instead (if possible).
+"  -j   Where it makes sense, remove a comment leader when joining lines.
+set formatoptions=cq1j
+
+" When terminal:
+"   256-color palette | 16-color -> ctermbg := DarkGray
+"   24-bit color | true color -> guibg := some blueish gray (DraculaSelection)
+highlight ColorColumn ctermbg=DarkGray guibg=#44475a
+highlight StatusLine ctermbg=DarkGray guibg=#44475a
+
+" Make long text lines more tolerable (often found in Markdown files)
+" - Always wrap long lines.
+" - Wrap lines at 'breakat' rather than at last char that fits on screen.
+" - Remap navigation thru "displayed" lines rather than "real" lines.
+set wrap
+set showbreak=↳\  linebreak
+noremap j gj
+noremap k gk
+
+" Modified - Easier start/end line navigation
+" Reference: https://github.com/kemitchell/dotfiles-debian/blob/master/vimrc#L192-L196
+noremap H g0
+noremap L g$
+
+set laststatus=2
+
+" Customized Status Line
+set statusline=%F:%l:%c\ %m%r%=%l\/%L\ (%P)
+"   %F      Absolute Filename path
+"   %l      Current Line number
+"   %c      Current Column number
+"
+"   %m      Modified flag
+"   %r      Readonly flag
+"
+"   %=      Right-Align
+"   %l\/%L  Ratio Current Line number of Total Lines
+"   %P      Percentage Current Line number of Total Lines
+
+" Press <space> to highlight search current word.
+" Press <space> again on a non-word to clear highlight search.
+" Reference: https://news.ycombinator.com/item?id=26287865
+nnoremap <silent><space>
+    \ :let @/='\<<C-R>=expand("<cword>")<CR>\>'<CR>:set hls<CR>
+
+" Minimal number of screen lines to keep above and below the cursor.
+set scrolloff=5
+
+" Fix Non-intuitive H-split and V-split for new Vim window
+set splitbelow splitright
+
+"*****************************************************************************
+"" Abbreviations
+"*****************************************************************************
+
+" Reduce file pollution named "1"
+cnoreabbrev w1 w!
+
+" Open help in new Fullscreen window tab
+cnoreabbrev h tab help
+
+" Open help in vertical split (default :help is horizontal split)
+cnoreabbrev vh vertical help
+
+"*****************************************************************************
+"" Autocmd Rules
+"*****************************************************************************
+
+" Trim trailing whitespaces while preserving current view
+function! TrimWhitespace()
+    let l:save = winsaveview()
+    keeppatterns %s/\s\+$//e
+    call winrestview(l:save)
+endfunction
+
+augroup MY_AUTO_STUFF
+    " Clear all my auto stuff to prevent recursion
+    autocmd!
+
+    " Additional FileType detection
+    autocmd BufRead,BufNewFile alias                       setfiletype sh
+    autocmd BufRead,BufNewFile Dockerfile.*,Dockerfile-*   setfiletype dockerfile
+    autocmd BufRead,BufNewFile gitconfig                   setfiletype gitconfig
+    autocmd BufRead,BufNewFile *Xresources.d/*             setfiletype xdefaults
+    autocmd BufRead,BufNewFile *strace                     setfiletype strace
+    autocmd BufRead,BufNewFile *.nqp                       setfiletype perl6
+
+    " Overwrite FileType RFC rfc*.txt from 'text' to 'rfc'
+    autocmd BufRead,BufNewFile rfc*.txt setlocal filetype=rfc
+
+    " Auto-delete trailing whitespaces on save
+    autocmd BufWritePre * call TrimWhitespace()
+
+    " Auto-Reload after editing Vim config
+    autocmd BufWritePost $MYVIMRC source $MYVIMRC
+augroup END
+
+" Preserve Tabs in Git config
+augroup gitconfig
+    autocmd Syntax gitconfig set tabstop=8 | set shiftwidth=8 | set noexpandtab
+augroup END
+
+" Preserve Tabs in Makefiles
+augroup make
+    autocmd Syntax make set noexpandtab
+augroup END
+
+" Rust style guide and `rustfmt` set max line width to 100 chars.
+" But I still want comment block to be formatted within 80 chars.
+" Overriding Vim Rust `textwidth=99`, and adding column #100 highlight.
+" Reference: https://github.com/nrc/rfcs/blob/style-guide/style-guide/README.md#formatting-conventions
+augroup rust
+    autocmd Syntax rust set textwidth=79 | set colorcolumn=+1,+21
+augroup END
+
+augroup yaml
+    autocmd Syntax yaml set tabstop=2 | set shiftwidth=2
+augroup END
+
+"*****************************************************************************
+"" Mappings
+"*****************************************************************************
+
+" anti-RSI
+nnoremap ; :
+vnoremap ; :
+
+" Default `ESC` key is ergonomically RSI-prone on regular QWERTY layout
+" Overly-used `C-c` (chord:5-2) often conflicts with other programs.
+" `C-[` (chord:5-5) requires two hands.
+" NOTE: Quick "jk" is `ESC`. Slow "j", wait 1 sec, "k" can insert "jk" text
+inoremap jk <ESC>
+
+" Function keys for cycling Previous/Next buffers
+nnoremap <F6> :bprevious<CR>
+nnoremap <F7> :bnext<CR>
+

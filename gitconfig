@@ -1,0 +1,17 @@
+[credential]
+	helper = cache --timeout=600
+[alias]
+	ci = commit
+	lg = log --all --color --graph --pretty=format:'%Cred%h%Creset%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+	rclone = clone --recurse-submodules
+[core]
+	excludesfile = ~/.gitignore_global
+	autocrlf = false
+[user]
+	email = 73035147+shamandar@users.noreply.github.com
+	name = shamandar
+[log]
+	date = iso
+[init]
+	templateDir = ~/.config/git-default-template
+	defaultBranch = main

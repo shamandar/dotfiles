@@ -1,0 +1,7 @@
+cargo
+cmake
+fontconfig-devel
+freetype-devel
+libxcb-devel
+libxkbcommon-devel
+rust

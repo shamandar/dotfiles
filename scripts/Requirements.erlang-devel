@@ -1,0 +1,10 @@
+autoconf
+flex
+gcc
+java-11-openjdk-devel
+libopenssl-devel
+make
+ncurses-devel
+psqlODBC
+tar
+unixODBC-devel

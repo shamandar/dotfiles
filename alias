@@ -1,0 +1,71 @@
+unalias -a
+
+alias ..="cd .."
+alias ...="cd ../.."
+alias +="pushd ."
+alias -- -="popd"
+
+alias ip="ip --color=auto"
+
+alias ls="ls -F --color=auto"
+alias la="ls -Altr"
+
+# Global `LC_TIME=en_GB.UTF-8` breaks old scripts requiring `C` or `en_US.UTF-8`.
+# Using alias workaround to display date/time in 24-Hour format.
+alias date="LC_TIME=en_GB.UTF-8 date"
+
+alias c="cargo"
+alias m="mix"
+alias v="vim -R"
+
+# Sort results by file path. Note that this currently disables
+# all parallelism and runs search in a single thread.
+# Insensitive case if pattern is all lowercase.
+alias rg="rg --sort path --smart-case"
+
+# By default, `dust` prints tree root at the bottom like the original `du` command.
+# Invert behaviour to print tree root at the top like the `tree` command.
+alias dust="dust --reverse"
+
+alias ispell="aspell -a"
+
+alias mkae="make"
+alias maek="make"
+alias amke="make"
+
+alias gci="git commit"
+alias gcd="git checkout"
+alias gdf="git diff"
+alias gst="git status"
+
+# Like `git branch --list --all` with delta from Main branch
+function gls()
+{
+    MAIN_BRANCHES="
+        origin/main
+        origin/master
+    "
+    for x in $MAIN_BRANCHES; do
+        if [[ -n $(git rev-parse --verify --quiet $x) ]]; then
+            main_branch="$x"
+            break
+        fi
+    done
+    CURRENT_BRANCH=`git rev-parse --abbrev-ref HEAD`
+
+    RED="\033[0;31m"
+    GREEN="\033[0;32m"
+    NORM="\033[0m"
+    git for-each-ref --format='%(refname:short) %(committerdate:relative)' refs/heads refs/remotes |
+        while read local_branch modified; do
+            behind_ahead=`git rev-list --count --left-right $main_branch...$local_branch`
+            fmt="%-50s -%-5d +%-5d (%s)"
+            if [[ $local_branch == $CURRENT_BRANCH ]]; then
+                printf "* ${GREEN}${fmt}${NORM}\n" $local_branch $behind_ahead "$modified"
+            elif [[ $local_branch == origin/* ]]; then
+                printf "  ${RED}${fmt}${NORM}\n" remotes/$local_branch $behind_ahead "$modified"
+            else
+                printf "  ${fmt}\n" $local_branch $behind_ahead "$modified"
+            fi
+        done
+}
