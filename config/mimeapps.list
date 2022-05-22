@@ -1,0 +1,16 @@
+[Default Applications]
+text/html=chromium.desktop
+x-scheme-handler/http=chromium.desktop
+x-scheme-handler/https=chromium.desktop
+x-scheme-handler/ftp=chromium.desktop
+image/bmp=qiv.desktop
+image/gif=qiv.desktop
+image/jpeg=qiv.desktop
+image/jpg=qiv.desktop
+image/png=qiv.desktop
+application/x-extension-htm=chromium.desktop
+application/x-extension-html=chromium.desktop
+application/x-extension-shtml=chromium.desktop
+application/xhtml+xml=chromium.desktop
+application/x-extension-xhtml=chromium.desktop
+application/x-extension-xht=chromium.desktop

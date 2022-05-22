@@ -1,0 +1,12 @@
+[submodule "vim/plugged/vim-dracula"]
+	path = vim/plugged/vim-dracula
+	url = ../vim-dracula.git
+[submodule "vim/plugged/vim-toml"]
+	path = vim/plugged/vim-toml
+	url = https://github.com/cespare/vim-toml
+[submodule "vim/plugged/vim-elixir"]
+	path = vim/plugged/vim-elixir
+	url = https://github.com/elixir-editors/vim-elixir
+[submodule "vim/plugged/vim-rfc"]
+	path = vim/plugged/vim-rfc
+	url = https://github.com/vim-scripts/rfc-syntax
