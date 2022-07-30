@@ -15,6 +15,7 @@ alias la="ls -Altr"
 alias date="LC_TIME=en_GB.UTF-8 date"
 
 alias c="cargo"
+alias j="python3 -m json.tool < "
 alias m="mix"
 alias v="vim -R"
 
