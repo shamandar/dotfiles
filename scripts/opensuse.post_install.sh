@@ -27,21 +27,21 @@ sudo zypper install --no-recommends pipewire
 ##      [x] Install nvidia driver
 sudo zypper remove --clean-deps Mesa-dri-nouveau
 sudo zypper addlock Mesa-dri-nouveau xf86-video-nouveau
-sudo zypper addrepo --refresh https://download.nvidia.com/opensuse/leap/15.3/ NVIDIA
+sudo zypper addrepo --refresh 'https://download.nvidia.com/opensuse/leap/${releasever}/' NVIDIA
 sudo zypper install --no-recommends x11-video-nvidiaG05 Mesa-demo-x
 #sudo shutdown -r now
 
 ##  [x] VLC repository (and vendor change)
 ##      Key Fingerprint: BC8D780D E3308581 B2E07085 33DE8FB7 C8DA93D2
 ##      [x] Install VLC and codecs
-sudo zypper addrepo --refresh https://download.videolan.org/SuSE/SLEap_15.3 VLC
+sudo zypper addrepo --refresh 'https://download.videolan.org/SuSE/${releasever}' VLC
 sudo zypper install --no-recommends vlc vlc-codecs libdvdcss2
 
 ##  [x] Packman repositories
 ##      Key Fingerprint:  F8875B88 0D518B6B 8C530D13 45A1D067 1ABD1AFB
-sudo zypper addrepo --check --refresh --priority 90 'https://ftp.gwdg.de/pub/linux/misc/packman/suse/openSUSE_Leap_15.3/Essentials' packman-essentials
-sudo zypper addrepo --check --refresh --priority 90 'https://ftp.gwdg.de/pub/linux/misc/packman/suse/openSUSE_Leap_15.3/Multimedia' packman-multimedia
-sudo zypper addrepo --check --refresh --priority 90 'https://ftp.gwdg.de/pub/linux/misc/packman/suse/openSUSE_Leap_15.3/Extra' packman-extra
+sudo zypper addrepo --check --refresh --priority 90 'https://ftp.gwdg.de/pub/linux/misc/packman/suse/openSUSE_Leap_${releasever}/Essentials' packman-essentials
+sudo zypper addrepo --check --refresh --priority 90 'https://ftp.gwdg.de/pub/linux/misc/packman/suse/openSUSE_Leap_${releasever}/Multimedia' packman-multimedia
+sudo zypper addrepo --check --refresh --priority 90 'https://ftp.gwdg.de/pub/linux/misc/packman/suse/openSUSE_Leap_${releasever}/Extra' packman-extra
 sudo zypper install --no-recommends dvdbackup
 
 ##  [x] Un-install LANG packages
@@ -54,6 +54,7 @@ unused_packages="
     gnome-online-accounts
     libgnomesu
     libroffice
+    mutter
     polkit
     postfix
     screen
