@@ -45,6 +45,8 @@ function gls()
     MAIN_BRANCHES="
         origin/main
         origin/master
+        origin/develop
+        origin/dev
     "
     for x in $MAIN_BRANCHES; do
         if [[ -n $(git rev-parse --verify --quiet $x) ]]; then
