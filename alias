@@ -40,7 +40,7 @@ alias gdf="git diff"
 alias gst="git status"
 
 # Like `git branch --list --all` with delta from Main branch
-function gls()
+gls()
 {
     MAIN_BRANCHES="
         origin/main
