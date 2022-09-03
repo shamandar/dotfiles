@@ -92,11 +92,11 @@ set colorcolumn=+1,+21
 "  -j   Where it makes sense, remove a comment leader when joining lines.
 set formatoptions=q1j
 
-" When terminal:
+" Override default colors to DraculaSelection (guibg=#44475a)
 "   256-color palette | 16-color -> ctermbg := DarkGray
 "   24-bit color | true color -> guibg := some blueish gray (DraculaSelection)
-highlight ColorColumn ctermbg=DarkGray guibg=#44475a
-highlight StatusLine ctermbg=DarkGray guibg=#44475a
+highlight! link ColorColumn DraculaSelection
+highlight! link StatusLine DraculaSelection
 
 " Make long text lines more tolerable (often found in Markdown files)
 " - Always wrap long lines.
