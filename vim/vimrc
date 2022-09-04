@@ -98,6 +98,12 @@ set formatoptions=q1j
 highlight! link ColorColumn DraculaSelection
 highlight! link StatusLine DraculaSelection
 
+" Override default CursorLine colors to Dracula, but only enable CursorLineNr color
+highlight! link CursorLine DraculaSelection
+highlight! link CursorLineNr DraculaYellow
+set cursorline
+set cursorlineopt=number
+
 " Make long text lines more tolerable (often found in Markdown files)
 " - Always wrap long lines.
 " - Wrap lines at 'breakat' rather than at last char that fits on screen.
