@@ -4,6 +4,10 @@
 	ci = commit
 	lg = log --all --color --graph --pretty=format:'%Cred%h%Creset%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 	rclone = clone --recurse-submodules
+	#FIXME: git commit-amend-date alias not working
+	#ca = "!f() { git commit --amend --date=\"$(date -R)\" }; f"
+	#ca = commit --amend --date="$(date -R)"
+	#ca = '!git commit --amend --date="$(date -R)"'
 [core]
 	excludesfile = ~/.gitignore_global
 	autocrlf = false
