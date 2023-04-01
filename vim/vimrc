@@ -51,6 +51,11 @@ set backspace=indent,eol,start
 " Ctags locations
 set tags=tags,../tags,../../tags
 
+" Disable undofile, Vim history, swapfile, and backup
+set noundofile viminfo=
+set noswapfile
+set nobackup
+
 "*****************************************************************************
 "" Visual Settings
 "*****************************************************************************
