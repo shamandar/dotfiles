@@ -10,6 +10,9 @@ alias ip="ip --color=auto"
 alias ls="ls -F --color=auto"
 alias la="ls -Altr"
 
+# Dont truncate division...
+alias bc="bc --mathlib"
+
 # Global `LC_TIME=en_GB.UTF-8` breaks old scripts requiring `C` or `en_US.UTF-8`.
 # Using alias workaround to display date/time in 24-Hour format.
 alias date="LC_TIME=en_GB.UTF-8 date"
