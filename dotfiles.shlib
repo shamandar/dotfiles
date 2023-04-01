@@ -18,6 +18,5 @@ declare -a dotfiles=(
     config/alacritty
     config/git-default-template
     config/mimeapps.list
-    config/systemd
     config/xkb
 )
