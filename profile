@@ -1,5 +1,5 @@
 export LANG=C.UTF-8
-export PATH=$HOME/bin:/usr/sbin:/usr/bin:/sbin:/bin
+export PATH=$HOME/bin:$HOME/.local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 
 ## Fix locale date/time format
 export LC_TIME="en_US.UTF-8"
