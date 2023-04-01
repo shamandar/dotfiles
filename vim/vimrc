@@ -84,6 +84,9 @@ endif
 "colorscheme codedark
 colorscheme dracula
 
+" Override Vim `listchars` SpecialKey to be less distracting Comment color
+highlight! link SpecialKey Comment
+
 set textwidth=79
 set colorcolumn=+1,+21
 
