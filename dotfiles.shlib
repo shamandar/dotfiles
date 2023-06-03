@@ -4,6 +4,7 @@ declare -a dotfiles=(
     alias
     bashrc
     profile
+    dmrc
     gitconfig
     gitignore_global
     inputrc
