@@ -189,8 +189,9 @@ augroup MY_AUTO_STUFF
     autocmd BufRead,BufNewFile *strace                     setfiletype strace
     autocmd BufRead,BufNewFile *.nqp                       setfiletype perl6
 
-    " Overwrite FileType RFC rfc*.txt from 'text' to 'rfc'
-    autocmd BufRead,BufNewFile rfc*.txt setlocal filetype=rfc
+    " Overwrite FileType RFC rfc*.txt and draft from 'text' to 'rfc'
+    autocmd BufRead rfc*.txt            setlocal filetype=rfc
+    autocmd BufRead draft-*-*.txt       setlocal filetype=rfc
 
     " Auto-delete trailing whitespaces on save
     autocmd BufWritePre * call TrimWhitespace()
