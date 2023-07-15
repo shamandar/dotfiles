@@ -1,6 +1,10 @@
 export LANG=C.UTF-8
 export PATH=$HOME/bin:$HOME/.local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 
+## Force to use TTY (ie. never use X11 ssh-askpass)
+export SSH_ASKPASS=
+export SSH_ASKPASS_REQUIRE=never
+
 ## Fix locale date/time format
 export LC_TIME="en_US.UTF-8"
 
