@@ -1,0 +1,9 @@
+#!/bin/sh
+
+docker run \
+        --rm \
+        --user=$UID:$(id -g) \
+        --volume=$PWD:/documents/ \
+        --workdir=/documents/ \
+        --entrypoint=/usr/bin/asciidoctor-pdf \
+    asciidoctor/docker-asciidoctor:latest $*
