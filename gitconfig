@@ -1,6 +1,7 @@
 [credential]
 	helper = cache --timeout=600
 [alias]
+	fmt = clang-format
 	ci = commit
 	lg = log --all --color --graph --pretty=format:'%Cred%h%Creset%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 	rclone = clone --recurse-submodules
