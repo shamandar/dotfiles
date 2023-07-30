@@ -1,0 +1,5 @@
+#!/bin/sh
+
+## WARNING: Paradox launcher `dowser` requires Internet...
+## But the Stellaris game executable does work offline.
+$HOME/Games/Stellaris/game/stellaris

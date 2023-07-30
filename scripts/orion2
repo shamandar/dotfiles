@@ -1,0 +1,9 @@
+#!/bin/sh
+
+GAMES_DIR=$HOME/Games
+MOO2_HOME=$GAMES_DIR/Master_of_Orion_2
+
+cd $MOO2_HOME
+# FIXME: Configure DosBox for Left-handed mouse
+# NOTE: Using system DosBox to preserve `aspect=true` instead of game DosBox
+dosbox -conf dosboxMOO2.conf -conf dosboxMOO2_single.conf -no-console -c exit

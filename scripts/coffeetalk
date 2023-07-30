@@ -1,0 +1,5 @@
+#!/bin/sh
+
+export WINEPREFIX=$HOME/.wine
+cd "$WINEPREFIX/dosdevices/c:/GOG Games/Coffee Talk"
+wine CoffeeTalk.exe

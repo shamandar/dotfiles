@@ -1,0 +1,5 @@
+#!/bin/sh
+
+export WINEPREFIX=$HOME/.wine
+cd "$WINEPREFIX/dosdevices/c:/GOG Games/DOOM 64"
+wine doom64_x64.exe

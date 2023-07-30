@@ -1,0 +1,5 @@
+#!/bin/sh
+
+export WINEPREFIX=$HOME/.wine
+cd "$WINEPREFIX/dosdevices/c:/GOG Games/Grim Dawn"
+wine "grim dawn.exe /d3d9"

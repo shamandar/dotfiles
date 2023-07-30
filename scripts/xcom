@@ -1,0 +1,5 @@
+#!/bin/sh
+
+export WINEPREFIX=$HOME/.wine
+cd "$WINEPREFIX/dosdevices/c:/GOG Games/XCOM Enemy Unknown/XEW/Binaries/Win32"
+wine XComEW.exe

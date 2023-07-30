@@ -1,0 +1,6 @@
+#!/bin/sh
+
+DIABLO_HOME=$HOME/.local/share/diasurgical/devilution/
+
+cd $DIABLO_HOME
+./devilutionx --data-dir $DIABLO_HOME
