@@ -41,3 +41,5 @@ export LESS='-MiRF'
 ## Disable useless ``~/.lesshst``
 export LESSHISTFILE="/dev/null"
 
+## Manage the .venv directory inside each project
+export PIPENV_VENV_IN_PROJECT="enabled"
