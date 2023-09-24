@@ -2,7 +2,7 @@
 
 ##  [x] Sudoer
         # COMMENT-OUT LINES "Defaults targetpw" and "ALL ALL=(ALL) ALL"
-        # ADD LINE "%wheel ALL=(ALL) /usr/bin/zypper, /usr/bin/rpm"
+        # ADD LINE "%wheel ALL=(ALL) /usr/bin/zypper, /usr/bin/rpm, /usr/sbin/shutdown"
 ##  [x] NTP Configuration
         # Start NTP Daemon: Now and on Boot
         # Synchronization Servers: time.nrc.ca
@@ -19,7 +19,6 @@
 ##      [x] Install pipewire
 sudo zypper remove --clean-deps pulseaudio
 sudo zypper addlock pulseaudio pavucontrol
-sudo zypper install --no-recommends pipewire
 
 ##  [x] NVidia repository and driver
 ##      Key Fingerprint: 9B763D49 D8A5C892 FC178BAC F5113243 C66B6EAE
