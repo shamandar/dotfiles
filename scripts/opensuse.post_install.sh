@@ -27,21 +27,20 @@ sudo zypper addlock pulseaudio pavucontrol
 sudo zypper remove --clean-deps Mesa-dri-nouveau
 sudo zypper addlock Mesa-dri-nouveau xf86-video-nouveau
 sudo zypper addrepo --refresh 'https://download.nvidia.com/opensuse/leap/${releasever}/' NVIDIA
-sudo zypper install --no-recommends x11-video-nvidiaG05 Mesa-demo-x
+sudo zypper install --no-recommends x11-video-nvidiaG05 nvidia-glG05 Mesa-demo-x
 #sudo shutdown -r now
-
-##  [x] VLC repository (and vendor change)
-##      Key Fingerprint: BC8D780D E3308581 B2E07085 33DE8FB7 C8DA93D2
-##      [x] Install VLC and codecs
-sudo zypper addrepo --refresh 'https://download.videolan.org/SuSE/${releasever}' VLC
-sudo zypper install --no-recommends vlc vlc-codecs libdvdcss2
 
 ##  [x] Packman repositories
 ##      Key Fingerprint:  F8875B88 0D518B6B 8C530D13 45A1D067 1ABD1AFB
 sudo zypper addrepo --check --refresh --priority 90 'https://ftp.gwdg.de/pub/linux/misc/packman/suse/openSUSE_Leap_${releasever}/Essentials' packman-essentials
 sudo zypper addrepo --check --refresh --priority 90 'https://ftp.gwdg.de/pub/linux/misc/packman/suse/openSUSE_Leap_${releasever}/Multimedia' packman-multimedia
 sudo zypper addrepo --check --refresh --priority 90 'https://ftp.gwdg.de/pub/linux/misc/packman/suse/openSUSE_Leap_${releasever}/Extra' packman-extra
-sudo zypper install --no-recommends dvdbackup
+
+##  [x] VLC repository (and vendor change)
+##      Key Fingerprint: BC8D780D E3308581 B2E07085 33DE8FB7 C8DA93D2
+##      [x] Install VLC and codecs
+sudo zypper addrepo --refresh 'https://download.videolan.org/SuSE/${releasever}' VLC
+sudo zypper install --no-recommends vlc vlc-codecs libdvdcss2
 
 ##  [x] Un-install LANG packages
 rpm -qa | grep -- "-lang" | xargs sudo rpm -e
@@ -68,6 +67,7 @@ sudo zypper rm --clean-deps gdm
 devtools="
     fd
     git
+    patch
     ripgrep
     ghc
     ghc-xmonad
@@ -88,5 +88,6 @@ devtools="
     noto-coloremoji-fonts
     flac
     sox
+    dvdbackup
 "
 sudo zypper install --no-recommends ${devtools}
