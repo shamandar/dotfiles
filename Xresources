@@ -3,8 +3,8 @@ XTerm.termName: xterm-256color
 XTerm.vt100.scrollBar: false
 
 # Run `fc-list ":scalable=true:spacing=mono"` to list available Mono fonts
-XTerm*faceName: xft:Droid Sans Mono:size=18
-#XTerm*faceName: xft:Inconsolata Regular:size=18
+#XTerm*faceName: xft:Droid Sans Mono:size=18
+XTerm*faceName: xft:Inconsolata Regular:size=18
 
 # Dracula Xresources palette
 # https://github.com/dracula/xresources/blob/master/Xresources
