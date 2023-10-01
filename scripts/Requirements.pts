@@ -1,6 +1,10 @@
 autoconf
 automake
+bc
+bison
+flex
 gcc
 gcc-c++
 libapparmor-devel
+libopenssl-devel
 make
