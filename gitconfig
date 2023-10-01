@@ -8,7 +8,7 @@
 [core]
 	excludesfile = ~/.gitignore_global
 	autocrlf = false
-	sshCommand = ssh -i ~/.ssh/id_rsa_gh_shmndr
+	sshCommand = ssh -i ~/.ssh/id_ed25519_gh_shmndr
 [user]
 	email = 73035147+shamandar@users.noreply.github.com
 	name = shamandar
