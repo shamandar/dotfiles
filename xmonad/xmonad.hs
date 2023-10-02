@@ -182,12 +182,12 @@ myLayout = smartBorders tallMain
 -- My StartupHook
 ------------------------------------------------------------------------
 
--- * Fix monitor refresh rate to 144 Hz
+-- * Downgrade HDMI monitor refresh rate to 75 Hz
 -- * Disable PC beep, disable DPMS, disable screen saver, mouse 5x accel 0 threshold
 -- * Set root window color
 myStartupHook :: X ()
 myStartupHook = do
-    spawnOnce "xrandr --output DP-0 --mode 2560x1440 --rate 144 &"
+    spawnOnce "xrandr --output HDMI-1 --mode 2560x1440 --rate 75 &"
     spawnOnce "xset -b -dpms s off m 5 0"
     spawnOnce $ "xsetroot -solid '" ++ draculaGray ++ "' &"
 
