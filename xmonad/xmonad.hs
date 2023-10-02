@@ -188,7 +188,7 @@ myLayout = smartBorders tallMain
 myStartupHook :: X ()
 myStartupHook = do
     spawnOnce "xrandr --output HDMI-1 --mode 2560x1440 --rate 75 &"
-    spawnOnce "xset -b -dpms s off m 5 0"
+    spawnOnce "xset -b -dpms s off m 5 0 &"
     spawnOnce $ "xsetroot -solid '" ++ draculaGray ++ "' &"
 
 
