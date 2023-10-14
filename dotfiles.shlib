@@ -15,6 +15,7 @@ declare -a dotfiles=(
     Xmodmap
     Xresources
     xmonad
+    asoundrc
 
     config/alacritty
     config/git-default-template

@@ -1,0 +1,19 @@
+# See Also https://www.alsa-project.org/main/index.php/Asoundrc
+pcm.reverse_stereo {
+    type dmix
+    ipc_key 314159
+    slave {
+        pcm "hw:0,7"    ## aplay --list-devices
+    }
+    bindings {
+        0 1
+        1 0
+    }
+}
+
+ctl.reverse_stereo {
+    type hw
+    card 0
+}
+
+pcm.default pcm.reverse_stereo
