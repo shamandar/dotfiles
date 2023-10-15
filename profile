@@ -1,6 +1,11 @@
 export LANG=C.UTF-8
 export PATH=$HOME/bin:$HOME/.local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 
+## Reference: https://wiki.archlinux.org/title/HiDPI#Qt_5
+export QT_AUTO_SCREEN_SCALE_FACTOR=1
+export QT_ENABLE_HIGHDPI_SCALING=1
+export QT_SCALE_FACTOR=1.5
+
 ## Force to use TTY (ie. never use X11 ssh-askpass)
 export SSH_ASKPASS=
 export SSH_ASKPASS_REQUIRE=never
