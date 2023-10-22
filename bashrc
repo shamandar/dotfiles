@@ -1,23 +1,3 @@
-BLACK="\033[0;30m"
-RED="\033[0;31m"
-GREEN="\033[0;32m"
-BROWN="\033[0;33m"
-BLUE="\033[0;34m"           # DraculaPurple
-PURPLE="\033[0;35m"         # DraculaPink
-CYAN="\033[0;36m"
-GRAY="\033[0;37m"
-
-BOLD_GRAY="\033[1;30m"
-BOLD_RED="\033[1;31m"
-BOLD_GREEN="\033[1;32m"
-BOLD_YELLOW="\033[1;33m"
-BOLD_BLUE="\033[1;34m"      # Bold/Light DraculaPurple
-BOLD_PURPLE="\033[1;35m"    # Bold/Light DraculaPink
-BOLD_CYAN="\033[1;36m"
-BOLD_GRAY="\033[1;37m"
-
-NORM="\033[0m"
-
 GIT_PROMPT_LOCATIONS="
     /etc/bash_completion.d/git-prompt.sh
     /etc/bash_completion.d/git-prompt
@@ -27,6 +7,11 @@ GIT_PROMPT_LOCATIONS="
 for x in $GIT_PROMPT_LOCATIONS; do
     [ -r $x ] && source $x && break
 done
+
+RED="\033[0;31m"
+BLUE="\033[0;34m"           # DraculaPurple
+PURPLE="\033[0;35m"         # DraculaPink
+NORM="\033[0m"
 
 if [ $(type -t __git_ps1) ]; then
     export GIT_PS1_SHOWDIRTYSTATE=true
