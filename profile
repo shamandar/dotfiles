@@ -1,5 +1,6 @@
 export LANG=C.UTF-8
 export PATH=$HOME/bin:$HOME/.local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+export LD_LIBRARY_PATH=$HOME/.local/lib64
 
 ## Reference: https://wiki.archlinux.org/title/HiDPI#Qt_5
 export QT_AUTO_SCREEN_SCALE_FACTOR=1
