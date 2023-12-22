@@ -16,4 +16,4 @@ ctl.reverse_stereo {
     card 0
 }
 
-pcm.default pcm.reverse_stereo
+pcm.!default pcm.reverse_stereo
