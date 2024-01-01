@@ -177,6 +177,11 @@ function! TrimWhitespace()
     call winrestview(l:save)
 endfunction
 
+" Reference: https://wiki.sagemath.org/Tips#Tips_for_Using_Sage
+augroup filetypedetect
+    autocmd! BufRead,BufNewFile *.sage,*.spyx,*.pyx setfiletype python
+augroup END
+
 augroup MY_AUTO_STUFF
     " Clear all my auto stuff to prevent recursion
     autocmd!
