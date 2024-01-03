@@ -1,0 +1,12 @@
+autoconf
+automake
+binutils
+cmake
+gcc-c++
+gcc-fortran
+libtool
+m4
+make
+meson
+ninja
+readline-devel
