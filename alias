@@ -60,6 +60,7 @@ alias gci="git commit"
 alias gcd="git checkout"
 alias gdf="git diff"
 alias gst="git status"
+alias gtags='git log --tags --simplify-by-decoration --pretty="format:%ci %d"'
 
 # Like `git branch --list --all` with delta from Main branch
 gls()
