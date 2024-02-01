@@ -1,0 +1,14 @@
+cmake
+fmt-devel
+gcc-c++
+glibc-devel
+gmock
+gtest
+libasan8
+libbz2-devel
+libpng-devel
+libsodium-devel
+libstdc++-devel
+libubsan1
+SDL2-devel
+SDL2_image-devel
