@@ -1,5 +1,5 @@
 export LANG=C.UTF-8
-export PATH=$HOME/bin:$HOME/.local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+export PATH=$HOME/bin:$HOME/.local/bin:/usr/bin:/bin:/usr/sbin:/sbin
 export LD_LIBRARY_PATH=$HOME/.local/lib64
 
 ## Reference: https://wiki.archlinux.org/title/HiDPI#Qt_5
