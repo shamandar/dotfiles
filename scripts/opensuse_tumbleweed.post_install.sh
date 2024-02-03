@@ -20,6 +20,13 @@
 sudo zypper remove --clean-deps pulseaudio
 sudo zypper addlock pulseaudio pavucontrol
 
+##  [x] GNOME
+##      [x] dconf
+##      [x] gvfs
+##      [x] gvfs iPod/iPhone backend
+sudo zypper remove --clean-deps dconf gvfs gvfs-backend-afc
+sudo zypper addlock dconf gvfs gvfs-backend-afc
+
 ##  [x] Packman repositories
 ##      Key Fingerprint:  F8875B88 0D518B6B 8C530D13 45A1D067 1ABD1AFB
 sudo zypper addrepo --check --refresh --priority 90 'https://ftp.gwdg.de/pub/linux/misc/packman/suse/openSUSE_Tumbleweed/Essentials/' packman-essentials

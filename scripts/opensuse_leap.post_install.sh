@@ -20,6 +20,13 @@
 sudo zypper remove --clean-deps pulseaudio
 sudo zypper addlock pulseaudio pavucontrol
 
+##  [x] GNOME
+##      [x] dconf
+##      [x] gvfs
+##      [x] gvfs iPod/iPhone backend
+sudo zypper remove --clean-deps dconf gvfs gvfs-backend-afc
+sudo zypper addlock dconf gvfs gvfs-backend-afc
+
 ##  [x] NVidia repository and driver
 ##      Key Fingerprint: 9B763D49 D8A5C892 FC178BAC F5113243 C66B6EAE
 ##      [x] Disable Mesa-dri-nouveau
