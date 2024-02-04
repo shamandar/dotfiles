@@ -24,8 +24,9 @@ sudo zypper addlock pulseaudio pavucontrol
 ##      [x] dconf
 ##      [x] gvfs
 ##      [x] gvfs iPod/iPhone backend
-sudo zypper remove --clean-deps dconf gvfs gvfs-backend-afc
-sudo zypper addlock dconf gvfs gvfs-backend-afc
+##      [x] drkonqi5
+sudo zypper remove --clean-deps dconf gvfs gvfs-backend-afc drkonqi5
+sudo zypper addlock dconf gvfs gvfs-backend-afc drkonqi5
 
 ##  [x] NVidia repository and driver
 ##      Key Fingerprint: 9B763D49 D8A5C892 FC178BAC F5113243 C66B6EAE
