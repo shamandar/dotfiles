@@ -3,7 +3,7 @@ pcm.reverse_stereo {
     type dmix
     ipc_key 314159
     slave {
-        pcm "hw:0,7"    ## aplay --list-devices
+        pcm "hw:0,3"    ## aplay --list-devices
     }
     bindings {
         0 1
