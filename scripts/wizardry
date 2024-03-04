@@ -1,0 +1,5 @@
+#!/bin/sh
+
+export WINEPREFIX=$HOME/.wine
+cd "$WINEPREFIX/drive_c/GOG Games/Wizardry Labyrinth of Lost Souls"
+wine LoLS_win32.exe
