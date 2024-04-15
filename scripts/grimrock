@@ -1,0 +1,13 @@
+#!/bin/sh
+
+# Restore XKB on exit
+restore_xkb()
+{
+    xmodmap $HOME/.config/xkb/xmodmap.capslockmustdie
+}
+trap restore_xkb EXIT
+
+# Remap WASD_QE to IJKL_UO for Legend of Grimrock
+xmodmap $HOME/.config/xkb/xmodmap.ijkl_uo
+
+$HOME/Games/Legend_of_Grimrock/start.sh
