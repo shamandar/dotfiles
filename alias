@@ -10,6 +10,9 @@ alias ip="ip --color=auto"
 alias ls="ls -F --color=auto"
 alias la="ls -Altr"
 
+# Search ignored and hidden files too
+alias fd="fd --no-ignore --hidden"
+
 # Phoronix Test Suite
 alias pts="phoronix-test-suite"
 
