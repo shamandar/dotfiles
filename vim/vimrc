@@ -188,7 +188,7 @@ augroup MY_AUTO_STUFF
 
     " Additional FileType detection
     autocmd BufRead,BufNewFile alias                       setfiletype sh
-    autocmd BufRead,BufNewFile Dockerfile.*,Dockerfile-*   setfiletype dockerfile
+    autocmd BufRead,BufNewFile [Dd]ockerfile.*,[Dd]ockerfile-* setfiletype dockerfile
     autocmd BufRead,BufNewFile gitconfig                   setfiletype gitconfig
     autocmd BufRead,BufNewFile *Xresources.d/*             setfiletype xdefaults
     autocmd BufRead,BufNewFile *strace                     setfiletype strace
