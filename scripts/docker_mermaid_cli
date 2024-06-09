@@ -4,4 +4,4 @@ docker run \
         --rm \
         --user=$UID:$(id -g) \
         --volume=$PWD:/data \
-    minlag/mermaid-cli $*
+    ghcr.io/mermaid-js/mermaid-cli/mermaid-cli $*
