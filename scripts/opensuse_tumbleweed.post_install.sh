@@ -51,11 +51,13 @@ unused_packages="
     libgnomesu
     libroffice
     mutter
+    nano
     polkit
     postfix
     screen
 "
 sudo zypper rm --clean-deps ${unused_packages}
+sudo zypper addlock nano
 
 ##  [x] Install LightDM before removing GNOME Display Manager
 sudo zypper install --no-recommends lightdm
