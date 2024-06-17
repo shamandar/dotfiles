@@ -242,6 +242,6 @@ vnoremap ; :
 inoremap jk <ESC>
 
 " Function keys for cycling Previous/Next buffers
-nnoremap <F7> :bprevious<CR>
-nnoremap <F8> :bnext<CR>
+nnoremap <F6> :bprevious<CR>
+nnoremap <F7> :bnext<CR>
 
