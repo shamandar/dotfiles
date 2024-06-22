@@ -31,7 +31,6 @@ alias dbash="docker run --interactive --tty --rm --entrypoint=/bin/bash"
 alias dls="docker images"
 alias drmall="docker ps --quiet --all | xargs docker rm"
 alias dc="docker-compose"
-alias j="python3 -m json.tool < "
 alias m="mix"
 alias v="vim -R"
 
