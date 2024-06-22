@@ -33,6 +33,7 @@ alias drmall="docker ps --quiet --all | xargs docker rm"
 alias dc="docker-compose"
 alias m="mix"
 alias v="vim -R"
+alias vg="vagrant"
 
 # Sort results by file path. Note that this currently disables
 # all parallelism and runs search in a single thread.
