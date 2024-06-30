@@ -1,3 +1,4 @@
+# FIXME: Hardware parameter errors with PipeWire(-Pulse)
 # See Also https://www.alsa-project.org/main/index.php/Asoundrc
 pcm.reverse_stereo {
     type dmix
